@@ -1,3 +1,6 @@
+import random
+from math import log
+
 from scipy.stats import expon as exponential
 
 Q_LIMIT = 100
@@ -147,7 +150,8 @@ def update_time_avg_stats():
 # Exponential variate generation function.
 def expon(mean):
     # Return an exponential random variate with mean "mean".
-    return exponential(scale=mean).rvs()
+    # return exponential(scale=mean).rvs()
+    return -mean*log(random.random())
 
 
 def main():
